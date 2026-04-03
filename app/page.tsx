@@ -708,6 +708,7 @@ const projectsData = [
     ],
     image: "spentrax",
     demoLink: "https://spentrax.vercel.app/",
+    githubLink: "https://github.com/spentrax",
     featured: true,
   },
   // {
@@ -816,35 +817,53 @@ const ProjectCard = ({
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-          {project.description}
-        </p>
+  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+    {project.title}
+  </h3>
 
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.tech.map((tech, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded-md border border-white/10"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+    {project.description}
+  </p>
 
-        <a
-          href={project.demoLink}
-          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium group/link"
-        >
-          View Demo{" "}
-          <ExternalLink
-            size={16}
-            className="group-hover/link:translate-x-1 transition-transform"
-          />
-        </a>
-      </div>
+  <div className="flex flex-wrap gap-2 mb-6">
+    {project.tech.map((tech, idx) => (
+      <span
+        key={idx}
+        className="px-2 py-1 text-xs bg-white/10 text-gray-300 rounded-md border border-white/10"
+      >
+        {tech}
+      </span>
+    ))}
+  </div>
+
+  <div className="flex gap-4">
+    <a
+      href={project.demoLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium group/link"
+    >
+      View Demo
+      <ExternalLink
+        size={16}
+        className="group-hover/link:translate-x-1 transition-transform"
+      />
+    </a>
+
+    <a
+      href={project.githubLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium group/link"
+    >
+      GitHub
+      <ExternalLink
+        size={16}
+        className="group-hover/link:translate-x-1 transition-transform"
+      />
+    </a>
+  </div>
+</div>
     </motion.div>
   );
 };
