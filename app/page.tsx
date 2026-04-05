@@ -387,7 +387,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Languages & Backend",
-      skills: ["Node.js", "TypeScript", "JavaScript", "Python (Basic)"],
+      skills: ["Node.js", "TypeScript", "JavaScript", "Python"],
       icon: Terminal,
       color: "from-blue-500 to-cyan-500",
     },
@@ -397,8 +397,8 @@ const Skills = () => {
         "Express.js",
         "REST APIs",
         "Swagger/OpenAPI",
-        "GraphQL (Basic)",
-        "NestJS (Basic)",
+        "GraphQL",
+        "NestJS",
       ],
       icon: Layers,
       color: "from-purple-500 to-pink-500",
@@ -434,7 +434,7 @@ const Skills = () => {
     },
     {
       title: "Cloud & DevOps",
-      skills: ["AWS", "Docker", "Kubernetes (Basic)"],
+      skills: ["AWS", "Docker", "Kubernetes"],
       icon: Cloud,
       color: "from-sky-500 to-blue-500",
     },
