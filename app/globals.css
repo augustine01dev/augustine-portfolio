@@ -35,8 +35,8 @@
   --foreground: #0a0a0a;
   --card: #ffffff;
   --card-foreground: #0a0a0a;
-  --primary: #22d3ee;
-  --primary-foreground: #041014;
+  --primary: #0e7490;
+  --primary-foreground: #ffffff;
   --secondary: #eeeeee;
   --secondary-foreground: #202020;
   --muted: #f0f0f0;
@@ -45,7 +45,7 @@
   --accent-foreground: #0a0a0a;
   --border: rgb(10 10 10 / 12%);
   --input: rgb(10 10 10 / 16%);
-  --ring: #22d3ee;
+  --ring: #0e7490;
   --destructive: #dc2626;
   --radius: .75rem;
 }
@@ -56,6 +56,8 @@
   --foreground: #f2f2f2;
   --card: #0f0f11;
   --card-foreground: #f2f2f2;
+  --primary: #22d3ee;
+  --primary-foreground: #041014;
   --secondary: #19191b;
   --secondary-foreground: #e5e5e5;
   --muted: #18181a;
@@ -64,6 +66,7 @@
   --accent-foreground: #f2f2f2;
   --border: rgb(255 255 255 / 11%);
   --input: rgb(255 255 255 / 16%);
+  --ring: #22d3ee;
   --destructive: #fb7185;
 }
 
@@ -81,7 +84,7 @@ body * {
   transition-duration: 360ms;
   transition-timing-function: ease;
 }
-::selection { background: rgb(34 211 238 / 24%); color: #fff; }
+::selection { background: color-mix(in srgb, var(--primary) 24%, transparent); color: var(--foreground); }
 
 .hero-grid {
   background-image:
