@@ -374,9 +374,8 @@ export function Portfolio() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground transition-colors duration-300">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/88 backdrop-blur-xl transition-colors duration-300">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <a href="#home" className="font-mono text-sm font-semibold tracking-[-.04em] text-foreground" onClick={() => setMobileOpen(false)}>aps<span className="text-primary">.dev</span></a>
-          <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-end gap-2 px-5 sm:px-8">
+          <nav aria-label="Primary navigation" className="mr-auto hidden items-center gap-7 lg:flex">
             {navItems.map((item) => <a key={item.id} href={`#${item.id}`} className={`relative py-2 font-mono text-[10px] uppercase tracking-[.16em] transition-colors ${activeSection === item.id ? 'text-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-primary after:shadow-[0_0_8px_var(--primary)]' : 'text-muted-foreground hover:text-foreground'}`}>{item.label}</a>)}
           </nav>
           <div className="hidden items-center gap-2 sm:flex">
