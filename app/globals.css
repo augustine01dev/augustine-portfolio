@@ -1,11 +1,151 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
-:root {
-  --background: #0f0c29;
-  --foreground: #ffffff;
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-sm: calc(var(--radius) * .6);
+  --radius-md: calc(var(--radius) * .8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.35);
 }
 
+:root {
+  color-scheme: light;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #22d3ee;
+  --primary-foreground: #041014;
+  --secondary: #eeeeee;
+  --secondary-foreground: #202020;
+  --muted: #f0f0f0;
+  --muted-foreground: #696969;
+  --accent: #e9e9e9;
+  --accent-foreground: #0a0a0a;
+  --border: rgb(10 10 10 / 12%);
+  --input: rgb(10 10 10 / 16%);
+  --ring: #22d3ee;
+  --destructive: #dc2626;
+  --radius: .75rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --card: #0f0f11;
+  --card-foreground: #f2f2f2;
+  --secondary: #19191b;
+  --secondary-foreground: #e5e5e5;
+  --muted: #18181a;
+  --muted-foreground: #8a8a8f;
+  --accent: #202023;
+  --accent-foreground: #f2f2f2;
+  --border: rgb(255 255 255 / 11%);
+  --input: rgb(255 255 255 / 16%);
+  --destructive: #fb7185;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 360ms ease, color 360ms ease;
+}
+body * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 360ms;
+  transition-timing-function: ease;
+}
+::selection { background: rgb(34 211 238 / 24%); color: #fff; }
+
+.hero-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--foreground) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--foreground) 6%, transparent) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black 5%, transparent 92%);
+}
+
+.cursor-blink { animation: cursor-blink 1.1s steps(2, start) infinite; }
+@keyframes cursor-blink { 50% { opacity: 0; } }
+
+.terminal-shell,
+.skill-pill,
+.project-card,
+.timeline-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.skill-icon-shell {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--foreground) 3%, transparent);
+}
+
+.dark .skill-icon-shell {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: transparent;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--foreground) 14%, transparent);
+}
+
+.project-card {
+  border: 1px solid var(--border);
+}
+
+.project-personal {
+  border-color: color-mix(in srgb, var(--primary) 32%, var(--border));
+  box-shadow: 0 18px 55px color-mix(in srgb, var(--primary) 7%, transparent);
+}
+
+.dark .project-personal {
+  box-shadow:
+    0 22px 70px rgb(0 0 0 / 28%),
+    0 0 30px color-mix(in srgb, var(--primary) 8%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 4%);
+}
+
+.project-professional {
+  border-color: color-mix(in srgb, var(--foreground) 24%, var(--border));
+  box-shadow: 0 18px 45px rgb(0 0 0 / 6%);
+}
+
+.dark .project-professional {
+  box-shadow: 0 22px 60px rgb(0 0 0 / 24%);
+}
+
+.dark .terminal-shell > div:last-child {
+  box-shadow:
+    0 30px 80px rgb(0 0 0 / 38%),
+    inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
