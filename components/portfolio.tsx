@@ -409,7 +409,7 @@ export function Portfolio() {
           <TerminalWindow />
         </div>
         <div className="mx-auto grid max-w-7xl grid-cols-2 border-x border-t border-border bg-card/80 backdrop-blur md:grid-cols-4">
-          {[["3.5+", 'Years of experience'], ['30%+', 'API latency reduction'], ['40%', 'Faster proctor response'], ['4+', 'Platforms in production']].map(([value, label], index) => <motion.div key={label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="border-b border-r border-border p-5 last:border-r-0 md:border-b-0 sm:p-7"><strong className="block text-3xl font-semibold tracking-[-.055em] text-foreground sm:text-4xl">{value}</strong><span className="mt-2 block font-mono text-[9px] uppercase tracking-[.14em] text-muted-foreground">{label}</span></motion.div>)}
+          {[["4", 'Years of experience'], ['30%+', 'API latency reduction'], ['40%', 'Faster proctor response'], ['4+', 'Platforms in production']].map(([value, label], index) => <motion.div key={label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="border-b border-r border-border p-5 last:border-r-0 md:border-b-0 sm:p-7"><strong className="block text-3xl font-semibold tracking-[-.055em] text-foreground sm:text-4xl">{value}</strong><span className="mt-2 block font-mono text-[9px] uppercase tracking-[.14em] text-muted-foreground">{label}</span></motion.div>)}
         </div>
       </section>
 
